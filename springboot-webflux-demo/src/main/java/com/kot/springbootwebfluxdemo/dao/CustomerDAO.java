@@ -23,7 +23,7 @@ public class CustomerDAO {
     public List<Customer> getCustomerDetails(){
         return IntStream.rangeClosed(1,50)
                 .peek(CustomerDAO::sleepExecution)
-                .peek(i->System.out.println("processing count :: "+ i))
+                .peek(i->System.out.println("processing count is :: "+ i))
                 .mapToObj(i->new Customer(i, "customer"+i))
                 .collect(Collectors.toList());
     }
